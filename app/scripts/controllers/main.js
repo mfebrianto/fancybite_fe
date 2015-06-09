@@ -7,7 +7,7 @@
  * # MainCtrl
  * Controller of the menubookFeApp
  */
-angular.module('menubookFeApp')
+angular.module('fancybiteApp')
   .controller('MainCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',

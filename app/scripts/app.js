@@ -9,7 +9,7 @@
  * Main module of the application.
  */
 angular
-  .module('menubookFeApp', [
+  .module('fancybiteApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
