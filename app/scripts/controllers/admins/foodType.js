@@ -14,4 +14,9 @@ angular.module('fancybiteApp')
       'AngularJS',
       'Karma'
     ];
+
+    $scope.foodType = {
+      name: '',
+      description: ''
+    };
   });
