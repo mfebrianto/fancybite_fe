@@ -1,9 +1,28 @@
 <p>Create Food Type</p>
 
-<form name="myForm" ng-controller="AdminsFoodTypeCtrl" class="my-form">
-  name: <input name="name" ng-model="foodType.name" required>
-  <span class="error" ng-show="myForm.input.$error.required">Required!</span><br>
-  description: <input name="description" ng-model="foodType.description" required>
-  <span class="error" ng-show="myForm.input.$error.required">Required!</span><br>
-  <input type="submit" value="submit">
-</form>
+<div ng-controller="AdminsFoodTypeCtrl">
+
+  <form name="myForm" ng-submit="addRow()" class="my-form">
+    name: <input name="name" ng-model="foodType.name" required>
+    <span class="error" ng-show="myForm.input.$error.required">Required!</span><br>
+    description: <input name="description" ng-model="foodType.description" required>
+    <span class="error" ng-show="myForm.input.$error.required">Required!</span><br>
+    <input type="submit" value="submit">
+  </form>
+
+
+  <table class="table">
+    <tr>
+      <th>Name
+      </th>
+      <th>Description
+      </th>
+    </tr>
+    <tr ng-repeat="foodt in foodTypes">
+      <td>{{foodt.name}}
+      </td>
+      <td>{{foodt.description}}
+      </td>
+    </tr>
+  </table>
+</div>

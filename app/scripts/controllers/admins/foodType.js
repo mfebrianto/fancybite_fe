@@ -19,4 +19,15 @@ angular.module('fancybiteApp')
       name: '',
       description: ''
     };
+
+    $scope.foodTypes = [];
+
+    $scope.addRow = function(){
+      $scope.foodTypes.push({ 'name': $scope.foodType.name,
+                              'description': $scope.foodType.description });
+        $scope.foodType = {
+          name: '',
+          description: ''
+        };
+    };
   });
