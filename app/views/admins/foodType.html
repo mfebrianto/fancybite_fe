@@ -17,11 +17,15 @@
       </th>
       <th>Description
       </th>
+      <th>
+      </th>
     </tr>
     <tr ng-repeat="foodt in foodTypes">
       <td>{{foodt.name}}
       </td>
       <td>{{foodt.description}}
+      </td>
+      <td><input type="button" value="Remove" class="btn btn-primary" ng-click="removeRow(foodt.name)"/>
       </td>
     </tr>
   </table>

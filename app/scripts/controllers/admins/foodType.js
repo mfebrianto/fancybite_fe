@@ -30,4 +30,22 @@ angular.module('fancybiteApp')
           description: ''
         };
     };
+
+    $scope.removeRow = function(name){
+      var index = -1;
+      var comArr = eval( $scope.foodTypes );
+      for( var i = 0; i < comArr.length; i++ ) {
+        if( comArr[i].name === name ) {
+          index = i;
+          break;
+        }
+      }
+
+      if( index === -1 ) {
+        alert( "Something gone wrong" );
+      }
+      $scope.foodTypes.splice( index, 1 );
+    }
+
+
   });
