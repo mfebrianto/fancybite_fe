@@ -35,6 +35,10 @@ angular
         templateUrl: 'views/admins/foodType.html',
         controller: 'AdminsFoodTypeCtrl'
       })
+      .when('/admins/foods', {
+        templateUrl: 'views/admins/food.html',
+        controller: 'AdminsFoodCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
