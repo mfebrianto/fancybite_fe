@@ -18,7 +18,7 @@ angular
     'ngTouch'
   ])
   .run(function ($rootScope) {
-    $rootScope.MENUBOOK_URI = 'http://localhost:8080';
+    $rootScope.MENUBOOK_URI = '/menubook/food_types.json';
   })
   .config(function ($routeProvider) {
     $routeProvider

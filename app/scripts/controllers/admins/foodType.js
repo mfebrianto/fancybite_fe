@@ -2,10 +2,10 @@
 
 /**
  * @ngdoc function
- * @name menubookFeApp.controller:AboutCtrl
+ * @name fancybiteApp.controller:AdminsFoodTypeCtrl
  * @description
  * # AboutCtrl
- * Controller of the menubookFeApp
+ * Controller of the fancybiteApp
  */
 angular.module('fancybiteApp')
   .controller('AdminsFoodTypeCtrl', function ($scope, $rootScope, $http) {
@@ -15,6 +15,17 @@ angular.module('fancybiteApp')
       'Karma'
     ];
 
+    $scope.foodTypes = [];
+
+    $scope.getAllFoodTypesFromMenuBook = function(){
+      $http.get($rootScope.MENUBOOK_URI)
+        .success(function(data) {
+          $.each(data, function(i) {
+            $scope.foodTypes.push(data[i]);
+          });
+        });
+    }
+
     $scope.initForm = function(){
       $scope.foodType = {
         name: '',
@@ -22,14 +33,14 @@ angular.module('fancybiteApp')
       };
     };
 
+    $scope.getAllFoodTypesFromMenuBook();
     $scope.initForm();
-    $scope.foodTypes = [];
 
     $scope.postFoodTypeToMenuBook = function(){
       var result = false;
       $.ajax({
         type: 'POST',
-        url: '/menubook/food_types.json',
+        url: $rootScope.MENUBOOK_URI,
         data: {food_type: $scope.foodType},
         async:false,
         success: function() {
