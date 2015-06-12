@@ -8,7 +8,7 @@
  * Controller of the menubookFeApp
  */
 angular.module('fancybiteApp')
-  .controller('AdminsFoodTypeCtrl', function ($scope) {
+  .controller('AdminsFoodTypeCtrl', function ($scope, $rootScope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -26,6 +26,9 @@ angular.module('fancybiteApp')
     $scope.foodTypes = [];
 
     $scope.addRow = function(){
+
+      //console.log(">>>>>"+$rootScope.MENUBOOK_URI);
+
       $scope.foodTypes.push({ 'name': $scope.foodType.name,
                               'description': $scope.foodType.description });
       $scope.initForm();

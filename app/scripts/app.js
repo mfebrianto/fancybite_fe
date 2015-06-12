@@ -17,6 +17,9 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
+  .run(function ($rootScope) {
+    $rootScope.MENUBOOK_URI = 'http://localhost:8080';
+  })
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
