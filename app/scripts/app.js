@@ -30,7 +30,7 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
-      .when('/admins/food_type', {
+      .when('/admins/food_types', {
         templateUrl: 'views/admins/foodType.html',
         controller: 'AdminsFoodTypeCtrl'
       })

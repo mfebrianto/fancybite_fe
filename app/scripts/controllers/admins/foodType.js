@@ -8,7 +8,7 @@
  * Controller of the menubookFeApp
  */
 angular.module('fancybiteApp')
-  .controller('AdminsFoodTypeCtrl', function ($scope, $rootScope) {
+  .controller('AdminsFoodTypeCtrl', function ($scope, $rootScope, $http) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -25,13 +25,29 @@ angular.module('fancybiteApp')
     $scope.initForm();
     $scope.foodTypes = [];
 
+    $scope.postFoodTypeToMenuBook = function(){
+      var result = false;
+      $.ajax({
+        type: 'POST',
+        url: '/menubook/food_types.json',
+        data: {food_type: $scope.foodType},
+        async:false,
+        success: function() {
+          result = true;
+        }
+      });
+      return result;
+    }
+
     $scope.addRow = function(){
-
-      //console.log(">>>>>"+$rootScope.MENUBOOK_URI);
-
-      $scope.foodTypes.push({ 'name': $scope.foodType.name,
-                              'description': $scope.foodType.description });
-      $scope.initForm();
+      var postFoodTypeToMenuBookResult = $scope.postFoodTypeToMenuBook();
+      if (postFoodTypeToMenuBookResult) {
+        $scope.foodTypes.push({
+          'name': $scope.foodType.name,
+          'description': $scope.foodType.description
+        });
+        $scope.initForm();
+      }
     };
 
     $scope.removeRow = function(name){
