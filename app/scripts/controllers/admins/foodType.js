@@ -50,10 +50,25 @@ angular.module('fancybiteApp')
       return result;
     }
 
+    $scope.deleteFoodTypeInMenuBook = function(id){
+      var result = false;
+      $.ajax({
+        type: 'POST',
+        url: $rootScope.MENUBOOK_FOOD_TYPES_DELETE_URI,
+        data: {food_type: {id: id}},
+        async:false,
+        success: function() {
+          result = true;
+        }
+      });
+      return result;
+    }
+
     $scope.addRow = function(){
       var postFoodTypeToMenuBookResult = $scope.postFoodTypeToMenuBook();
       if (postFoodTypeToMenuBookResult) {
         $scope.foodTypes.push({
+          'id': $scope.foodType.id,
           'name': $scope.foodType.name,
           'description': $scope.foodType.description
         });
@@ -61,21 +76,24 @@ angular.module('fancybiteApp')
       }
     };
 
-    $scope.removeRow = function(name){
-      var index = -1;
-      var comArr = eval( $scope.foodTypes );
-      for( var i = 0; i < comArr.length; i++ ) {
-        if( comArr[i].name === name ) {
-          index = i;
-          break;
+    $scope.removeRow = function(id) {
+      var deleteFoodTypeInMenuBook = $scope.deleteFoodTypeInMenuBook(id);
+      if (deleteFoodTypeInMenuBook) {
+        var index = -1;
+        var comArr = eval($scope.foodTypes);
+        for (var i = 0; i < comArr.length; i++) {
+          if (comArr[i].id === id) {
+            index = i;
+            break;
+          }
         }
-      }
 
-      if( index === -1 ) {
-        alert( "Something gone wrong" );
+        if (index === -1) {
+          alert("Something gone wrong");
+        }
+        $scope.foodTypes.splice(index, 1);
       }
-      $scope.foodTypes.splice( index, 1 );
-    }
+    };
 
 
   });

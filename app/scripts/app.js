@@ -19,6 +19,7 @@ angular
   ])
   .run(function ($rootScope) {
     $rootScope.MENUBOOK_URI = '/menubook/food_types.json';
+    $rootScope.MENUBOOK_FOOD_TYPES_DELETE_URI = '/menubook/food_types/delete.json';
   })
   .config(function ($routeProvider) {
     $routeProvider
