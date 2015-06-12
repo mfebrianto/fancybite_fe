@@ -16,8 +16,20 @@ describe('Controller: AdminsFoodTypeCtrl', function () {
     });
   }));
 
+  describe('initForm', function(){
+    it('should clear field of name and description', function () {
+      scope.initForm();
+      expect(scope.foodType).toEqual ({name: '',description: ''});
+    });
+  });
+
   describe('addRow', function(){
     it('should add member', function () {
+      scope.addRow();
+      expect(scope.foodTypes.length).toEqual (1);
+    });
+    it('should clean form', function () {
+      scope.addRow();
       expect(scope.foodType).toEqual ({name: '',description: ''});
     });
   });

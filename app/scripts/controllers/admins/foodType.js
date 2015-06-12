@@ -15,20 +15,20 @@ angular.module('fancybiteApp')
       'Karma'
     ];
 
-    $scope.foodType = {
-      name: '',
-      description: ''
+    $scope.initForm = function(){
+      $scope.foodType = {
+        name: '',
+        description: ''
+      };
     };
 
+    $scope.initForm();
     $scope.foodTypes = [];
 
     $scope.addRow = function(){
       $scope.foodTypes.push({ 'name': $scope.foodType.name,
                               'description': $scope.foodType.description });
-        $scope.foodType = {
-          name: '',
-          description: ''
-        };
+      $scope.initForm();
     };
 
     $scope.removeRow = function(name){
