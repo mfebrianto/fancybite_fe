@@ -2,7 +2,7 @@
 
 <div ng-controller="AdminsFoodCtrl">
 
-  <form name="myForm" ng-submit="uploadFile()" class="my-form">
+  <form name="myForm" ng-submit="addRow()" class="my-form">
     name: <input name="name" ng-model="food.name" required>
     <span class="error" ng-show="myForm.input.$error.required">Required!</span><br>
     description: <input name="description" ng-model="food.description" required>
@@ -12,4 +12,24 @@
     <input type="submit" value="submit">
   </form>
 
- </div>
+
+  <table class="table">
+    <tr>
+      <th>Name
+      </th>
+      <th>Description
+      </th>
+      <th>
+      </th>
+    </tr>
+    <tr ng-repeat="food in foods">
+      <td>{{food.name}}
+      </td>
+      <td>{{food.description}}
+      </td>
+      <td><input type="button" value="Remove" class="btn btn-primary" ng-click="removeRow(food.id)"/>
+      </td>
+    </tr>
+  </table>
+
+</div>

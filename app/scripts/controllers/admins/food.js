@@ -40,7 +40,7 @@ angular.module('fancybiteApp')
     }
   }])
 
-  .controller('AdminsFoodCtrl', function ($scope, fileUpload) {
+  .controller('AdminsFoodCtrl', function ($scope, $rootScope, fileUpload) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -61,6 +61,33 @@ angular.module('fancybiteApp')
       };
     };
 
+    $scope.foods = [];
     $scope.initForm();
+
+    $scope.postFoodToMenuBook = function(){
+      var result = false;
+      $.ajax({
+        type: 'POST',
+        url: $rootScope.MENUBOOK_FOOD_URI,
+        data: {food: $scope.food},
+        async:false,
+        success: function() {
+          result = true;
+        }
+      });
+      return result;
+    };
+
+    $scope.addRow = function() {
+      var postFoodToMenuBookResult = $scope.postFoodToMenuBook();
+      if (postFoodToMenuBookResult) {
+        $scope.foods.push({
+          'id': $scope.food.id,
+          'name': $scope.food.name,
+          'description': $scope.food.description
+        });
+        $scope.initForm();
+      }
+    }
 
   });
