@@ -102,4 +102,37 @@ angular.module('fancybiteApp')
       }
     }
 
+    $scope.deleteFoodInMenuBook = function(id){
+      var result = false;
+      $.ajax({
+        type: 'POST',
+        url: $rootScope.MENUBOOK_FOOD_DELETE_URI,
+        data: {food: {id: id}},
+        async:false,
+        success: function() {
+          result = true;
+        }
+      });
+      return result;
+    }
+
+    $scope.removeRow = function(id) {
+      var deleteFoodInMenuBook = $scope.deleteFoodInMenuBook(id);
+      if (deleteFoodInMenuBook) {
+        var index = -1;
+        var comArr = eval($scope.foods);
+        for (var i = 0; i < comArr.length; i++) {
+          if (comArr[i].id === id) {
+            index = i;
+            break;
+          }
+        }
+
+        if (index === -1) {
+          alert("Something gone wrong");
+        }
+        $scope.foods.splice(index, 1);
+      }
+    };
+
   });
