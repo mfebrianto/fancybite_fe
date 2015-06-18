@@ -47,18 +47,23 @@ angular.module('fancybiteApp')
       'Karma'
     ];
 
-    $scope.uploadFile = function(){
+    $scope.uploadFile = function(food_id){
       var file = $scope.myFile;
       console.log('file is ' + JSON.stringify(file));
-      var uploadUrl = "/menubook/foods/upload_image";
+      var uploadUrl = "/menubook/foods/upload_image.json"+"?food_id="+food_id;
       fileUpload.uploadFileToUrl(file, uploadUrl);
+      $scope.initForm();
     };
 
     $scope.initForm = function(){
       $scope.food = {
+        id: '',
         name: '',
         description: ''
       };
+
+      $('#myForm_file').val('');
+      $('#myForm_submit').val('submit');
     };
 
 
@@ -91,15 +96,34 @@ angular.module('fancybiteApp')
     };
 
     $scope.addRow = function() {
-      var postFoodToMenuBookResult = $scope.postFoodToMenuBook();
-      if (postFoodToMenuBookResult) {
-        $scope.foods.push({
-          'id': $scope.food.id,
-          'name': $scope.food.name,
-          'description': $scope.food.description
-        });
-        $scope.initForm();
+
+      if ($scope.food.id != null) {
+        console.log(">>>>>>>>>>>>>");
+        $scope.uploadFile($scope.food.id);
       }
+      else
+      {
+        var postFoodToMenuBookResult = $scope.postFoodToMenuBook();
+        if (postFoodToMenuBookResult) {
+          $scope.foods.push({
+            'id': $scope.food.id,
+            'name': $scope.food.name,
+            'description': $scope.food.description
+          });
+        }
+      }
+      $scope.initForm();
+
+    }
+
+    $scope.editRow = function(food_id, food_name, food_description){
+      $scope.food = {
+        id: food_id,
+        name: food_name,
+        description: food_description
+      };
+
+      $('#myForm_submit').val('update');
     }
 
     $scope.deleteFoodInMenuBook = function(id){
