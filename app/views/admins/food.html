@@ -20,6 +20,8 @@
       </th>
       <th>Description
       </th>
+      <th>image
+      </th>
       <th>
       </th>
     </tr>
@@ -27,6 +29,8 @@
       <td>{{food.name}}
       </td>
       <td>{{food.description}}
+      </td>
+      <td><img src="{{food.image}}" alt="Smiley face" height="42" width="42">
       </td>
       <td><input type="button" value="Remove" class="btn btn-primary" ng-click="removeRow(food.id)"/>
         <input type="button" value="Edit" class="btn btn-primary" ng-click="editRow(food.id, food.name, food.description)"/>

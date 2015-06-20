@@ -8,7 +8,6 @@
  * Controller of the fancybiteApp
  */
 angular.module('fancybiteApp')
-
   .directive('fileModel', ['$parse', function ($parse) {
     return {
       restrict: 'A',
@@ -59,17 +58,21 @@ angular.module('fancybiteApp')
       $scope.food = {
         id: '',
         name: '',
-        description: ''
+        description: '',
+        image: ''
       };
 
       $('#myForm_file').val('');
       $('#myForm_submit').val('submit');
     };
 
+    $scope.cleanFoodTable = function(){
+      $scope.foods = [];
+    }
 
-    $scope.foods = [];
 
     $scope.getAllFoodsFromMenuBook = function(){
+      $scope.cleanFoodTable();
       $http.get($rootScope.MENUBOOK_FOOD_URI)
         .success(function(data) {
           $.each(data, function(i) {
@@ -96,9 +99,7 @@ angular.module('fancybiteApp')
     };
 
     $scope.addRow = function() {
-
       if ($scope.food.id != null) {
-        console.log(">>>>>>>>>>>>>");
         $scope.uploadFile($scope.food.id);
       }
       else
@@ -113,7 +114,7 @@ angular.module('fancybiteApp')
         }
       }
       $scope.initForm();
-
+      $scope.getAllFoodsFromMenuBook();
     }
 
     $scope.editRow = function(food_id, food_name, food_description){
@@ -158,5 +159,4 @@ angular.module('fancybiteApp')
         $scope.foods.splice(index, 1);
       }
     };
-
   });
