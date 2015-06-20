@@ -25,10 +25,12 @@ angular.module('fancybiteApp')
   }])
 
   .service('fileUpload', ['$http', function ($http) {
-    this.uploadFileToUrl = function(file, uploadUrl){
+    this.uploadFileToUrl = function(file, uploadUrl, name, description){
       var fd = new FormData();
       fd.append('food_image', file);
-      $http.post(uploadUrl, fd, {
+      fd.append('name', name);
+      fd.append('description', description);
+      $http.put(uploadUrl, fd, {
         transformRequest: angular.identity,
         headers: {'Content-Type': undefined}
       })
@@ -49,8 +51,8 @@ angular.module('fancybiteApp')
     $scope.uploadFile = function(food_id){
       var file = $scope.myFile;
       console.log('file is ' + JSON.stringify(file));
-      var uploadUrl = "/menubook/foods/upload_image.json"+"?food_id="+food_id;
-      fileUpload.uploadFileToUrl(file, uploadUrl);
+      var uploadUrl = "/menubook/foods/"+food_id+".json";
+      fileUpload.uploadFileToUrl(file, uploadUrl, $scope.food.name, $scope.food.description);
       $scope.initForm();
     };
 
@@ -99,7 +101,7 @@ angular.module('fancybiteApp')
     };
 
     $scope.addRow = function() {
-      if ($scope.food.id != null) {
+      if ($scope.food.id != '') {
         $scope.uploadFile($scope.food.id);
       }
       else
