@@ -8,6 +8,8 @@
     <span class="error" ng-show="myForm.input.$error.required">Required!</span><br>
     description: <input name="description" ng-model="food.description" required>
     <span class="error" ng-show="myForm.input.$error.required">Required!</span><br>
+    price: <input name="price" ng-model="food.price" required>
+    <span class="error" ng-show="myForm.input.$error.required">Required!</span><br>
     food image: <input id="myForm_file" type="file" file-model="myFile"/>
     <span class="error" ng-show="myForm.input.$error.required">Required!</span><br>
     <input id="myForm_submit" type="submit" value="submit">
@@ -20,6 +22,8 @@
       </th>
       <th>Description
       </th>
+      <th>Price
+      </th>
       <th>image
       </th>
       <th>
@@ -30,10 +34,12 @@
       </td>
       <td>{{food.description}}
       </td>
+      <td>{{food.price}}
+      </td>
       <td><img src="{{food.image}}" alt="Smiley face" height="42" width="42">
       </td>
       <td><input type="button" value="Remove" class="btn btn-primary" ng-click="removeRow(food.id)"/>
-        <input type="button" value="Edit" class="btn btn-primary" ng-click="editRow(food.id, food.name, food.description)"/>
+        <input type="button" value="Edit" class="btn btn-primary" ng-click="editRow(food.id, food.name, food.description, food.price)"/>
       </td>
     </tr>
   </table>

@@ -25,11 +25,12 @@ angular.module('fancybiteApp')
   }])
 
   .service('fileUpload', ['$http', function ($http) {
-    this.uploadFileToUrl = function(file, uploadUrl, name, description){
+    this.uploadFileToUrl = function(file, uploadUrl, name, description, price){
       var fd = new FormData();
       fd.append('food_image', file);
       fd.append('name', name);
       fd.append('description', description);
+      fd.append('price', price);
       $http.put(uploadUrl, fd, {
         transformRequest: angular.identity,
         headers: {'Content-Type': undefined}
@@ -48,19 +49,12 @@ angular.module('fancybiteApp')
       'Karma'
     ];
 
-    $scope.uploadFile = function(food_id){
-      var file = $scope.myFile;
-      console.log('file is ' + JSON.stringify(file));
-      var uploadUrl = "/menubook/foods/"+food_id+".json";
-      fileUpload.uploadFileToUrl(file, uploadUrl, $scope.food.name, $scope.food.description);
-      $scope.initForm();
-    };
-
     $scope.initForm = function(){
       $scope.food = {
         id: '',
         name: '',
         description: '',
+        price: '',
         image: ''
       };
 
@@ -77,14 +71,21 @@ angular.module('fancybiteApp')
       $scope.cleanFoodTable();
       $http.get($rootScope.MENUBOOK_FOOD_URI)
         .success(function(data) {
-          $.each(data, function(i) {
-            $scope.foods.push(data[i]);
-          });
+          $scope.foods = data;
         });
     }
 
     $scope.getAllFoodsFromMenuBook();
     $scope.initForm();
+
+    $scope.uploadFile = function(food_id){
+      var file = $scope.myFile;
+      console.log('file is ' + JSON.stringify(file));
+      var uploadUrl = "/menubook/foods/"+food_id+".json";
+      fileUpload.uploadFileToUrl(file, uploadUrl, $scope.food.name, $scope.food.description, $scope.food.price);
+      $scope.initForm();
+      $scope.getAllFoodsFromMenuBook();
+    };
 
     $scope.postFoodToMenuBook = function(){
       var result = false;
@@ -111,7 +112,8 @@ angular.module('fancybiteApp')
           $scope.foods.push({
             'id': $scope.food.id,
             'name': $scope.food.name,
-            'description': $scope.food.description
+            'description': $scope.food.description,
+            'price': $scope.food.price
           });
         }
       }
@@ -119,11 +121,12 @@ angular.module('fancybiteApp')
       $scope.getAllFoodsFromMenuBook();
     }
 
-    $scope.editRow = function(food_id, food_name, food_description){
+    $scope.editRow = function(food_id, food_name, food_description, food_price){
       $scope.food = {
         id: food_id,
         name: food_name,
-        description: food_description
+        description: food_description,
+        price: food_price
       };
 
       $('#myForm_submit').val('update');
