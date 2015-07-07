@@ -1,0 +1,3 @@
+[submodule "dist/dist"]
+	path = dist/dist
+	url = git@github.com:mfebrianto/fancybite_fe.git
