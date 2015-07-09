@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";AAAA,YAAY;EACV,MAAM,EAAE,mBAAmB;EAC3B,OAAO,EAAE,mBAAmB",
+"sources": ["sass/foodDetail.sass"],
+"names": [],
+"file": "foodDetail.css"
+}

@@ -15,10 +15,12 @@ angular.module('fancybiteApp')
       'Karma'
     ];
 
+    $scope.food = {};
+
     this.loadFoodDetail = function(){
       FoodFactory.getFoodDetail($routeParams.foodId)
         .success(function(data){
-          console.log(">>>>>"+data.name);
+          $scope.food=data;
         })
     }
 

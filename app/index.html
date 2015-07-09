@@ -13,6 +13,7 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.min.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/foodDetail.css">
     <!-- endbuild -->
   </head>
   <body ng-app="fancybiteApp">
@@ -21,46 +22,27 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="row">
-      <nav class="top-bar background-colour-pink-important" data-topbar>
-        <ul class="title-area">
-          <li class="name">
-            <h1><a href="#/">Homemade and Finest</a></h1>
-          </li>
-        </ul>
-      </nav>
-    </div>
-
-    <div class="row">
-      <div ng-view=""></div>
-    </div>
-
-    <div class="footer">
-      <div class="large-12 columns">
-        <div class="row">
-          <div class="large-6 columns">
-            <p>© Fancybite Copyright.</p>
-          </div>
-          <div class="large-6 columns">
-            <ul class="inline-list right">
-              <li>
-                <!--<a href="#">Link 1</a>-->
-              </li>
-              <li>
-                <!--<a href="#">Link 2</a>-->
-              </li>
-              <li>
-                <!--<a href="#">Link 3</a>-->
-              </li>
-              <li>
-                <!--<a href="#">Link 4</a>-->
-              </li>
-            </ul>
-          </div>
-        </div>
+    <div id="wrapper">
+      <div class="row">
+        <nav class="top-bar background-colour-pink-important" data-topbar>
+          <ul class="title-area">
+            <li class="name">
+              <h1><a href="#/">Homemade and Finest</a></h1>
+            </li>
+          </ul>
+        </nav>
       </div>
-    </div>
 
+      <div id="content" class="row">
+        <div ng-view=""></div>
+      </div>
+
+
+      <div class="row footer">
+        <p>© Fancybite Copyright.</p>
+      </div>
+
+    </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <!--<script>-->

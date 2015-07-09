@@ -2,3 +2,24 @@
 .background-colour-pink-important {
   background-color: #efbbd2 !important;
 }
+
+/* line 4, sass/main.sass */
+#wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+/* line 9, sass/main.sass */
+#content {
+  padding-bottom: 120px;
+}
+
+/* line 12, sass/main.sass */
+.footer {
+  background: #ffab62;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+/*# sourceMappingURL=main.css.map */
