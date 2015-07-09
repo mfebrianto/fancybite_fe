@@ -17,7 +17,7 @@ angular.module('fancybiteApp')
 
     this.loadFoodDetail = function(){
       FoodFactory.getFoodDetail($routeParams.foodId)
-        .success(function(){
+        .success(function(data){
           console.log(">>>>>"+data.name);
         })
     }

@@ -29,6 +29,7 @@ angular.module('fancybiteApp')
     this.getAllFoodsFromMenuBook();
 
     $scope.showDetail = function(foodId){
-      LocationFactory.
+      LocationFactory.goToFoodDetail(foodId);
     }
+
   });

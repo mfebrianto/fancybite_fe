@@ -1,11 +1,11 @@
 'use strict';
 
-angular.module('gocvApp')
+angular.module('fancybiteApp')
   .factory('LocationFactory', function($location) {
 
     var locationFactory = {};
 
-    locationFactory.goToFoodDetai = function(foodId){
+    locationFactory.goToFoodDetail = function(foodId){
       $location.path('/food/'+foodId);
     }
 
