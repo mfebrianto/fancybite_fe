@@ -8,7 +8,7 @@
  * Controller of the menubookFeApp
  */
 angular.module('fancybiteApp')
-  .controller('MainCtrl', function ($scope, $http, $rootScope) {
+  .controller('MainCtrl', function ($scope, $http, $rootScope, LocationFactory) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -17,7 +17,7 @@ angular.module('fancybiteApp')
 
     $scope.foods = [];
 
-    $scope.getAllFoodsFromMenuBook = function(){
+    this.getAllFoodsFromMenuBook = function(){
       $http.get($rootScope.MENUBOOK_FOOD_URI)
         .success(function(data) {
           $.each(data, function(i) {
@@ -26,5 +26,9 @@ angular.module('fancybiteApp')
         });
     }
 
-    $scope.getAllFoodsFromMenuBook();
+    this.getAllFoodsFromMenuBook();
+
+    $scope.showDetail = function(foodId){
+      LocationFactory.
+    }
   });

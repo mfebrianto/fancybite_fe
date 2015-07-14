@@ -33,6 +33,10 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
+      .when('/food/:foodId', {
+        templateUrl: 'views/foodDetail.html',
+        controller: 'FoodDetailCtrl'
+      })
       .when('/admins/food_types', {
         templateUrl: 'views/admins/foodType.html',
         controller: 'AdminsFoodTypeCtrl'

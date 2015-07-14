@@ -15,7 +15,7 @@
       <div class="large-8 columns">
         <div class="row">
           <div class="large-4 small-6 columns" ng-repeat="food in foods">
-            <img src="{{food.image}}", height="166", width="500" >
+            <img src="{{food.image}}", height="166", width="500" ng-click="showDetail(food.id)">
             <div class="panel">
               <h5>{{food.name}}</h5>
               <h6 class="subheader">Rp {{food.price}}k</h6>
