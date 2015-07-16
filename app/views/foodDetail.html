@@ -8,17 +8,21 @@
       </div>
 
       <div class="large-8 columns">
-        <div class="row">
-            {{ food.name }}
-        </div>
-        <div class="row">
-            {{ food.description }}
-        </div>
-        <div class="row">
-            {{ food.price }}
-        </div>
+        <div class="margin-left-medium">
+          <div class="row">
+              {{ food.name }}
+          </div>
+          <div class="row">
+              {{ food.description }}
+          </div>
+          <div class="row">
+              {{ food.price }}
+          </div>
         </div>
       </div>
     </div>
   </div>
+
+  <div class="margin-top-medium" ng-include="'views/partials/backButton.html'"></div>
+
 </div>
