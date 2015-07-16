@@ -25,7 +25,15 @@
 
 /* line 16, sass/common.sass */
 .width-60 {
-  width: 60%;
+  width: 60% !important;
+}
+
+/* line 19, sass/common.sass */
+.centre {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 /*# sourceMappingURL=common.css.map */
