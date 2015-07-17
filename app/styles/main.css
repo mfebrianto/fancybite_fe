@@ -9,16 +9,21 @@
   position: relative;
 }
 
-/* line 9, sass/main.sass */
+/* line 8, sass/main.sass */
 #content {
   padding-bottom: 120px;
 }
 
-/* line 12, sass/main.sass */
+/* line 11, sass/main.sass */
 .footer {
   width: 100%;
   position: absolute;
   bottom: 0;
+}
+
+/* line 16, sass/main.sass */
+html, body {
+  overflow-x: hidden;
 }
 
 /*# sourceMappingURL=main.css.map */
