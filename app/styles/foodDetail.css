@@ -4,4 +4,21 @@
   padding: 10px 10px 10px 10px;
 }
 
+/* line 5, sass/foodDetail.sass */
+.food-detail-labels {
+  text-align: left;
+}
+
+/* line 8, sass/foodDetail.sass */
+.food-name-text {
+  color: #00CC99;
+  font-size: 30px;
+}
+
+/* line 14, sass/foodDetail.sass */
+.food-price-text {
+  color: #00CC99;
+  font-size: 30px;
+}
+
 /*# sourceMappingURL=foodDetail.css.map */

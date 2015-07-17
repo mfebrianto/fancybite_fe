@@ -10,7 +10,7 @@
 
 /* line 7, sass/common.sass */
 .margin-top-large {
-  margin-top: 90px;
+  margin-top: 60px;
 }
 
 /* line 10, sass/common.sass */
@@ -29,6 +29,11 @@
 }
 
 /* line 19, sass/common.sass */
+.width-70 {
+  width: 60% !important;
+}
+
+/* line 22, sass/common.sass */
 .centre {
   display: block;
   margin-left: auto;
