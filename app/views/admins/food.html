@@ -4,11 +4,17 @@
 
   <form id="myForm" name="myForm" ng-submit="addRow()" class="my-form">
     <input name="id" type="hidden" ng-model="food.id">
-    name: <input name="name" ng-model="food.name" required>
+    name: <input type="text" name="name" ng-model="food.name" ng-maxlength="17" required>
+    <pre>myForm.food.name.$error = {{ myForm.food.name.$error | json }}</pre>
+    <div ng-messages="myForm.food.name.$error" style="color:maroon" role="alert">
+      <div ng-message="required">You did not enter a field</div>
+      <div ng-message="maxlength">Your field is too long</div>
+    </div>
+
+
+    description: <input type="textarea" name="description" ng-model="food.description" required>
     <span class="error" ng-show="myForm.input.$error.required">Required!</span><br>
-    description: <input name="description" ng-model="food.description" required>
-    <span class="error" ng-show="myForm.input.$error.required">Required!</span><br>
-    price: <input name="price" ng-model="food.price" required>
+    price: <input type="text" name="price" ng-model="food.price" required>
     <span class="error" ng-show="myForm.input.$error.required">Required!</span><br>
     food image: <input id="myForm_file" type="file" file-model="myFile"/>
     <span class="error" ng-show="myForm.input.$error.required">Required!</span><br>

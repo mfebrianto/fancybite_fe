@@ -15,7 +15,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ngMessages'
   ])
   .run(function ($rootScope) {
     $rootScope.MENUBOOK_URI = '/menubook/food_types.json';
