@@ -2,11 +2,12 @@
 
 <div ng-controller="AdminsFoodCtrl">
 
+
+
   <form id="myForm" name="myForm" ng-submit="addRow()" class="my-form">
     <input name="id" type="hidden" ng-model="food.id">
     name: <input type="text" name="name" ng-model="food.name" ng-maxlength="17" required>
-    <pre>myForm.food.name.$error = {{ myForm.food.name.$error | json }}</pre>
-    <div ng-messages="myForm.food.name.$error" style="color:maroon" role="alert">
+    <div ng-messages="myForm.name.$error" ng-if="myForm.name.$dirty" style="color:maroon" role="alert">
       <div ng-message="required">You did not enter a field</div>
       <div ng-message="maxlength">Your field is too long</div>
     </div>
