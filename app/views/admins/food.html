@@ -12,11 +12,16 @@
       <div ng-message="maxlength">Your field is too long</div>
     </div>
 
+    description: <textarea name="description" ng-model="food.description" required/>
+    <div ng-messages="myForm.description.$error" ng-if="myForm.description.$dirty" style="color:maroon" role="alert">
+      <div ng-message="required">You did not enter a field</div>
+    </div>
 
-    description: <input type="textarea" name="description" ng-model="food.description" required>
-    <span class="error" ng-show="myForm.input.$error.required">Required!</span><br>
     price: <input type="text" name="price" ng-model="food.price" required>
-    <span class="error" ng-show="myForm.input.$error.required">Required!</span><br>
+    <div ng-messages="myForm.price.$error" ng-if="myForm.price.$dirty" style="color:maroon" role="alert">
+      <div ng-message="required">You did not enter a field</div>
+    </div>
+
     food image: <input id="myForm_file" type="file" file-model="myFile"/>
     <span class="error" ng-show="myForm.input.$error.required">Required!</span><br>
     <input id="myForm_submit" type="submit" value="submit">
