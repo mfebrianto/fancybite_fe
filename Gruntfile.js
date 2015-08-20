@@ -416,6 +416,22 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
+    },
+
+    deploy: {
+      staging: {
+        options:{
+          servers: [{
+            host: '139.162.15.221',
+            port: 22,
+            username: 'f2',
+            password: 'MfC221686!'
+          }],
+          //cmds_before_deploy: ["some cmds you may want to exec before deploy"],
+          //cmds_after_deploy: ["forever restart", "some other cmds you want to exec after deploy"],
+          deploy_path: '~/fancybite'
+        }
+      }
     }
   });
 
