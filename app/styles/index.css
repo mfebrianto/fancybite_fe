@@ -1,0 +1,27 @@
+/* line 1, sass/index.sass */
+.background-colour-pink-important {
+  background-color: #efbbd2 !important;
+}
+
+/* line 4, sass/index.sass */
+#wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+/* line 8, sass/index.sass */
+#content {
+  padding-bottom: 120px;
+}
+
+/* line 11, sass/index.sass */
+.footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+/* line 16, sass/index.sass */
+html, body {
+  overflow-x: hidden;
+}

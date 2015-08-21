@@ -1,29 +1,187 @@
-/* line 1, sass/main.sass */
+/* line 1, sass/common.sass */
+.margin-top-small {
+  margin-top: 10px;
+}
+
+/* line 4, sass/common.sass */
+.margin-top-medium {
+  margin-top: 30px;
+}
+
+/* line 7, sass/common.sass */
+.margin-top-large {
+  margin-top: 60px;
+}
+
+/* line 10, sass/common.sass */
+.margin-left-small {
+  margin-left: 10px;
+}
+
+/* line 13, sass/common.sass */
+.margin-left-medium {
+  margin-left: 30px;
+}
+
+/* line 16, sass/common.sass */
+.width-60 {
+  width: 60% !important;
+}
+
+/* line 19, sass/common.sass */
+.width-70 {
+  width: 60% !important;
+}
+
+/* line 22, sass/common.sass */
+.centre {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* line 1, sass/foodDetail.sass */
+.image-frame {
+  margin: 20px 10px 20px 10px;
+  padding: 10px 10px 10px 10px;
+}
+
+/* line 5, sass/foodDetail.sass */
+.food-detail-labels {
+  text-align: left;
+}
+
+/* line 8, sass/foodDetail.sass */
+.food-name-text {
+  color: #00CC99;
+  font-size: 30px;
+}
+
+/* line 14, sass/foodDetail.sass */
+.food-price-text {
+  color: #00CC99;
+  font-size: 30px;
+}
+
+/* line 1, sass/index.sass */
 .background-colour-pink-important {
   background-color: #efbbd2 !important;
 }
 
-/* line 4, sass/main.sass */
+/* line 4, sass/index.sass */
 #wrapper {
   min-height: 100%;
   position: relative;
 }
 
-/* line 8, sass/main.sass */
+/* line 8, sass/index.sass */
 #content {
   padding-bottom: 120px;
 }
 
-/* line 11, sass/main.sass */
+/* line 11, sass/index.sass */
 .footer {
   width: 100%;
   position: absolute;
   bottom: 0;
 }
 
-/* line 16, sass/main.sass */
+/* line 16, sass/index.sass */
 html, body {
   overflow-x: hidden;
 }
 
-/*# sourceMappingURL=main.css.map */
+/* line 1, sass/common.sass */
+.margin-top-small {
+  margin-top: 10px;
+}
+
+/* line 4, sass/common.sass */
+.margin-top-medium {
+  margin-top: 30px;
+}
+
+/* line 7, sass/common.sass */
+.margin-top-large {
+  margin-top: 60px;
+}
+
+/* line 10, sass/common.sass */
+.margin-left-small {
+  margin-left: 10px;
+}
+
+/* line 13, sass/common.sass */
+.margin-left-medium {
+  margin-left: 30px;
+}
+
+/* line 16, sass/common.sass */
+.width-60 {
+  width: 60% !important;
+}
+
+/* line 19, sass/common.sass */
+.width-70 {
+  width: 60% !important;
+}
+
+/* line 22, sass/common.sass */
+.centre {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* line 1, sass/foodDetail.sass */
+.image-frame {
+  margin: 20px 10px 20px 10px;
+  padding: 10px 10px 10px 10px;
+}
+
+/* line 5, sass/foodDetail.sass */
+.food-detail-labels {
+  text-align: left;
+}
+
+/* line 8, sass/foodDetail.sass */
+.food-name-text {
+  color: #00CC99;
+  font-size: 30px;
+}
+
+/* line 14, sass/foodDetail.sass */
+.food-price-text {
+  color: #00CC99;
+  font-size: 30px;
+}
+
+/* line 1, sass/index.sass */
+.background-colour-pink-important {
+  background-color: #efbbd2 !important;
+}
+
+/* line 4, sass/index.sass */
+#wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+/* line 8, sass/index.sass */
+#content {
+  padding-bottom: 120px;
+}
+
+/* line 11, sass/index.sass */
+.footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+/* line 16, sass/index.sass */
+html, body {
+  overflow-x: hidden;
+}

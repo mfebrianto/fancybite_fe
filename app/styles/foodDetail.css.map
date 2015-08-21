@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": ";AAAA,YAAY;EACV,MAAM,EAAE,mBAAmB;EAC3B,OAAO,EAAE,mBAAmB;;;;AAE9B,mBAAmB;EACjB,UAAU,EAAE,IAAI;;;;AAElB,eAAe;EACb,KAAK,EAAE,OAAO;EACd,SAAS,EAAE,IAAI;;;;AAIjB,gBAAgB;EACd,KAAK,EAAE,OAAO;EACd,SAAS,EAAE,IAAI",
-"sources": ["sass/foodDetail.sass"],
-"names": [],
-"file": "foodDetail.css"
-}
